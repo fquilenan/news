@@ -27,28 +27,45 @@
     <p>
       <% for news in @headlines_titles %>
         <div class="container mt-5">
-            <%= news["title"] %>
-            <%= news["url"] %>
+            <h3><%= news["title"] %></h3>
+          <p>  <%= news["description"] %></p>
+          <a href= "<%= news["url"] %>"  class="btn btn-primary">Go to source</a>
         </div>
       <% end %>
     </p>
+
+
+
+  
+
+
       
-    <h2>Coordinates</h2>
-    <p>
-      Your location's coordinates are <%= @lat %> <%= @lng %>
-      </p>
+   
     
-    <h2>The weather in <%= @location %></h2>
+    <h1>The weather in <%= @location %></h1>
+    
+    <p>
+    
+    <div class="container mt-5">
+      <h1>Where 2?</h1>
+      <iframe
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw"
+          &q=<%= @lat_long %>&zoom=6" allowfullscreen>
+      </iframe>
+    </p>
     <p>
       In <%= @location %>, it is currently <%= @current_temperature %> degrees and <%= @current_conditions.downcase %>
     </p>
     <p>
-      Extended forecast:
+      <h5> Next week's forecast: </h5>
     </p>
     <p>
       <% for day in @daily_forecast %>
         <div class="container mt-5">
-            A high temperature of <%= day["temperatureHigh"] %> degrees and <%= day["summary"] %>
+            The maximum temperature on X day is <%= day["temperatureHigh"] %> degrees and <%= day["summary"] %>
         </div>
       <% end %>    
     <p>
@@ -61,5 +78,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  </div>
+    </body>
 </html>
