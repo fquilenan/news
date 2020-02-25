@@ -29,7 +29,7 @@ get "/news" do
     @current_temperature = @forecast["currently"]["temperature"]
     @current_conditions = @forecast["currently"]["summary"]
     @daily_forecast = @forecast["daily"]["data"]
-    @lat_long = "#{@lat},#{@lng}"
+    @lat_lng = "#{@lat},#{@lng}"
     @week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
   view "news"

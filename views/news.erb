@@ -34,9 +34,27 @@
       <% end %>
     </p>
 
+<hr class="my-4">
 
-
-  
+  <div class="row mt-1">
+        <div class="col-sm-6 text-center">
+          <h1>Where is <%= @location %>?</h1>
+      <iframe
+        width="350"
+        height="350"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw
+          &q=<%= @lat_lng %>&zoom=6" allowfullscreen>
+      </iframe>
+        </div>
+        <div class="col-sm-6 text-center">
+        <hr class="my-5">
+          <h2> In <%= @location %>, it's currently <%= @current_temperature %> degrees and <%= @current_conditions.downcase %> 
+    </i></h2>
+          
+        
+      </div>
+    </div>
 
 
       
@@ -44,22 +62,13 @@
     
     <h1>The weather in <%= @location %></h1>
     
-    <p>
     
-    <div class="container mt-5">
-      <h1>Where 2?</h1>
-      <iframe
-        width="600"
-        height="450"
-        frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw"
-          &q=<%= @lat_long %>&zoom=6" allowfullscreen>
-      </iframe>
-    </p>
+    
+    
+    
     <p>
-      In <%= @location %>, it is currently <%= @current_temperature %> degrees and <%= @current_conditions.downcase %>
-    </p>
-    <p>
+    <p> </p>
+    <hr class="my-4">
       <h5> Next week's forecast: </h5>
     </p>
     <p>
