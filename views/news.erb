@@ -23,19 +23,34 @@
   </head>
   <body>
     <div class="container mt-5">
-      <h1>News</h1>
-      <%= @lat %> <%= @lng %>
+      <h1>The News</h1>
+    <p>
+      <% for news in @headlines_titles %>
+        <div class="container mt-5">
+            <%= news["title"] %>
+            <%= news["url"] %>
+        </div>
+      <% end %>
+    </p>
+      
+    <h2>Coordinates</h2>
+    <p>
+      Your location's coordinates are <%= @lat %> <%= @lng %>
+      </p>
+    
+    <h2>The weather in <%= @location %></h2>
     <p>
       In <%= @location %>, it is currently <%= @current_temperature %> degrees and <%= @current_conditions.downcase %>
+    </p>
+    <p>
+      Extended forecast:
     </p>
     <p>
       <% for day in @daily_forecast %>
         <div class="container mt-5">
             A high temperature of <%= day["temperatureHigh"] %> degrees and <%= day["summary"] %>
         </div>
-      <% end %>
-      
-    </p>
+      <% end %>    
     <p>
         <a href="/" class="btn btn-primary">Try again!</a>
     </p>
